@@ -1,0 +1,87 @@
+Nama	: Nabil Tegar
+NPM		: 1606874596
+Kelas	: APAP-B
+
+TUTORIAL 2 APAP
+
+
+Latihan Project Viral
+---------------------
+
+1. Ganti baris @RequestMapping(“/viral”) menjadi @RequestMapping(“/viral2jari”).
+
+a. Apakah terjadi compile error?
+Tidak terjadi compile error, karena tidak ada syntax pada page controller yang mengalami kesalahan
+
+b. Coba akses localhost:8080/viral, berikan alasan dan jelaskan apa yang terjadi.
+Terdapat whitelabel error karena memiliki explicit mapping yang berbeda dengan request mapping
+
+c. Apakah Kegunaan @RequestMapping(“/viral”)
+Untuk meminta mapping sehingga bisa menggunakan /viral di belakang url utama.
+
+2. Ganti nama method index() menjadi nama method viral()
+
+a. Apakah terjadi compile error?
+Tidak
+
+b. Coba akses localhost:8080/viral, berikan alasan dan jelaskan apa yang terjadi.
+Kembalikan menjadi index()
+Tetap bisa berjalan karena pergantian nama menjadi viral() hanya sebatas pergantian nama, dan tidak berpengaruh kepada request mapping
+
+3. Ganti string return type menjadi menjadi return “viral2jari”
+
+a. Apakah terjadi compile error?
+Iya
+
+b. Coba akses localhost:8080/viral, berikan alasan dan jelaskan apa yang terjadi.
+Terjadi whitelabel error karena string returnnya berbeda dengan nama file yang ada di templates.
+
+c. Apakah kegunaan return type pada method controller tersebut?
+Untuk menyambungkan ke html yang berada templates project
+
+
+
+Latihan​ ​Request​ ​Parameter
+-------------------------
+
+1. Mengapa tulisan “In My feeling” pada thymeleaf challenge tidak pernah muncul di
+browser?
+Karena XML dari Thymeleaf meng-override html-nya.
+
+2. Ubah nilai anotasi Request Mapping “/challenge” menjadi “/viral/challenge”. Deskripsikan hasilnya!
+Terdapat whitelabel error pada 8080/viral?name=kiki, dikarenakan page sudah pindah ke 8080/viral/challenge?name=kiki.
+
+3. Akses localhost:8080/challenge.
+
+a. Deskripsikan hasilnya
+Terdapat whitelabel error karena diperlukan parameter nama.
+
+b. Ubah methodnya menjadi seperti di bawah ini, deskripsikan lalu kembalikan
+ke bentuk awal!
+Page dapat muncul, namun karena tidak ada input nama jadinya yang menggantikan adalah "null"
+
+c. Ubah methodnya menjadi seperti di bawah ini, deskripsikan lalu kembalikan
+ke bentuk awal!
+Page dapat muncul, dan karena sekarang sudah ada value defaultnya jadinya yang sebelumnya "null" telah berganti menjadi "kiki"
+
+
+
+Latihan​ ​Path Variable
+----------------------
+
+1. Akses localhost:8080/challenge/
+
+Apakah hasil dari halaman tersebut?
+Whitelabel error page, karena tidak ada path name
+
+2. Ubah method challengePath menjadi seperti berikut:
+
+Akses localhost:8080/challenge/
+
+Apakah hasil dari halaman tersebut?
+Terdapat whitelabel error page.
+
+3. Akses localhost:8080/challenge/kiki
+
+Apakah hasil dari halaman tersebut?
+Page dapat muncul dengan nama "kiki" seperti diisi di Path
